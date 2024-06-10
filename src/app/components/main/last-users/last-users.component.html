@@ -1,0 +1,11 @@
+<div class="avatars_container">
+  @for (user of lastUsers; track user.username) {
+  <a class="user" [routerLink]="user.username">
+    <img
+      class="avatar"
+      [src]="user.avatar_url"
+      [alt]="user.username + 'avatar'"
+    />
+  </a>
+  }
+</div>

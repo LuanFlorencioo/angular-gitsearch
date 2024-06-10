@@ -1,0 +1,87 @@
+<main class="main_page">
+  <div class="container">
+    <header class="header_page">
+      <a routerLink="/">
+        <button class="button_return">
+          <fa-icon [icon]="icons.arrowLeft" /> Voltar
+        </button>
+      </a>
+
+      <a routerLink="/">
+        <h1>GitSearch</h1>
+      </a>
+    </header>
+
+    <section class="user_section">
+      <img [src]="user.avatar_url" alt="Avatar user" class="user_avatar" />
+
+      <div class="user_identification">
+        <h2 class="user_name">{{user.name}}</h2>
+
+        <p class="user_username">{{'@' + user.username}}</p>
+      </div>
+
+      @if (user.bio) {
+      <p class="user_bio">{{user.bio}}</p>
+      }
+
+      <div class="user_follow">
+        <p class="user_following">
+          <fa-icon [icon]="icons.userGroup" /> Following:
+          <strong>{{user.following}}</strong>
+        </p>
+
+        <p class="user_followers">
+          Followers: <strong>{{user.followers}}</strong>
+        </p>
+      </div>
+
+      @if (user.location) {
+      <p class="user_location">
+        <fa-icon [icon]="icons.locationDot" /> {{user.location}}
+      </p>
+      } @if (user.company) {
+      <p class="user_company">
+        <fa-icon [icon]="icons.building" /> {{user.company}}
+      </p>
+      }
+    </section>
+
+    <section class="repos_section">
+      @for (repo of repos; track repo.id) {
+      <div class="repo_container">
+        <div class="repo_info">
+          <div class="repo_identification">
+            <h3 class="repo_name">{{repo.name}}</h3>
+            <p class="repo_date">{{repo.created_at.slice(0, 10)}}</p>
+          </div>
+
+          @if (repo.description) {
+          <p class="repo_description">{{repo.description}}</p>
+          }
+        </div>
+
+        <div class="repo_links">
+          <a [href]="repo.url" target="_blank" rel="noopener noreferrer">
+            <button class="repo_button">
+              <fa-icon [icon]="icons.codeBranch" /> Repo
+            </button>
+          </a>
+
+          @if (repo.homepage) {
+          <a
+            [href]="repo.homepage.includes('https://') ? repo.homepage : 'https://' + repo.homepage"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            <button class="repo_button">
+              <fa-icon [icon]="icons.arrowUpRightFromSquare" /> App
+            </button>
+          </a>
+          }
+        </div>
+      </div>
+      }
+    </section>
+  </div>
+</main>

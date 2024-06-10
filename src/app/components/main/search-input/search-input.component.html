@@ -1,0 +1,24 @@
+<form [formGroup]="form" (ngSubmit)="onSubmit()">
+  <label for="username">Username:</label>
+
+  <div class="input_container">
+    <input
+      type="text"
+      id="username"
+      placeholder="type here the username profile"
+      formControlName="username"
+      maxlength="30"
+      minlength="3"
+      autocomplete="off"
+      [attr.data-error]="errorSearch"
+    />
+
+    <button type="submit" [disabled]="form.status === 'INVALID'">
+      <fa-icon [icon]="iconSearch" />
+    </button>
+  </div>
+
+  @if (errorSearch) {
+  <span class="error_message">Username not founded</span>
+  }
+</form>

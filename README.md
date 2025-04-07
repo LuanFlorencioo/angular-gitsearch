@@ -1,27 +1,82 @@
-# AngularGitsearch
+![Logo](./src/assets/logo.svg)
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 17.2.3.
+# Angular Gitsearch
 
-## Development server
+![Angular17](https://img.shields.io/badge/Angular-v17-222?style=flat&logo=angular)
+![Sass](https://img.shields.io/badge/Sass-222?style=flat&logo=sass)
+![Typescript](https://img.shields.io/badge/Typescript-222?style=flat&logo=typescript)
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The application will automatically reload if you change any of the source files.
+Gitsearch é uma aplicação utilizando Angular 17 de procurar repositórios existentes do Github. Foi inspirado em um projeto que havia feito com apenas html, css e javascript durante o curso de Desenvolvimento Web Fullstack da Kenzie Academy Brasil. Neste projeto pus em prática os estudos e aprendizados em Angular.
 
-## Code scaffolding
+Acesse a aplicação através do link
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+✔ [https://angular-gitsearch.vercel.app/](https://angular-gitsearch.vercel.app/)
 
-## Build
+## Sumário
+- [Funcionalidades](#funcionalidades)
+- [Tecnologias Utilizadas](#tecnologias-utilizadas)
+- [API Utilizada](#api-utilizada)
+- [Estrutura do Projeto](#estrutura-do-projeto)
+- [Melhorias Futuras](#melhorias-futuras)
+- [Como Contribuir](#como-contribuir)
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.
+## Funcionalidades
 
-## Running unit tests
+- Buscar usuários do GitHub pelo nome de usuário
+- Exibir informações básicas do perfil encontrado
+  - Nome
+  - Bio
+  - Localização
+  - Seguidores
+- Listar repositórios públicos do usuário
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+## Tecnologias Utilizadas
 
-## Running end-to-end tests
+- Angular 17
+- TypeScript
+- API REST do GitHub
+- Sass
 
-Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To use this command, you need to first add a package that implements end-to-end testing capabilities.
+## API Utilizada
 
-## Further help
+### GitHub REST API
 
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
+https://docs.github.com/pt/rest
+
+Endpoints principais utilizados:
+- Buscar usuário: https://api.github.com/users/{username}
+- Listar repositórios: https://api.github.com/users/{username}/repos
+
+## Estrutura do Projeto
+```
+src/
+├── app/
+│   ├── components/...
+│   ├── models/...
+│   ├── pages/...
+│   ├── services/...
+│   └── styles/...
+├── assets/...
+├── index.html
+├── main.ts
+└── styles.scss
+```
+
+## Melhorias Futuras
+
+- Paginação dos repositórios
+- Exibir detalhes dos repositórios
+- Buscar por repositórios específicos
+- Palheta de cores mais agradável e simples ao usuário
+
+## Como Contribuir
+
+Se quiser contribuir com melhorias ou sugestões, fique à vontade para abrir um **pull request** ou criar uma **issue**. Se preferir, pode até me mandar mensagem pelo **discord**
+
+[![Discrod](https://img.shields.io/badge/discord-1a1919?style=for-the-badge&logo=discord)](https://discord.com/users/luanflorencio)
+
+---
+
+💻 Desenvolvido por [Luan Florencio](https://florencioo.vercel.app/) - @LuanFlorencioo
+
+<img src="https://github.com/LuanFlorencioo.png" style="border-radius: 999px" width=200 />
